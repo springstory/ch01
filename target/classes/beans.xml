@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 태그를 루트 엘리먼트로 갖는다 beans 에는 네임 스페이스를 비롯한 XML 스키마 관련정보가 저장되며, 자식 
+	엘리먼트로 <bean> 을 가질수 있다. 또한 bean 설정파일을 나누어 설정할 경우에는 <import> 태그를 이용하여 여러 xml 
+	파일을 포함시킬 수 있다. -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<!-- <import resource="userBeans.xml" /> -->
+	<bean id="S5" class="ch01.coupling.S5Impl" >
+		<constructor-arg  value="white"/>
+	</bean>
+	<bean id="G3" class="ch01.coupling.G3Impl" />
 </beans>

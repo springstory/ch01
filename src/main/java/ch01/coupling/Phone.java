@@ -5,5 +5,5 @@ public interface Phone {
 	public void TurnOff();
 	public void SendMessage();
 	public void MakeCall();
-	
+	public String getColor();
 }
