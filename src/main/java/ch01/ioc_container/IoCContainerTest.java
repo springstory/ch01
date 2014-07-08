@@ -13,28 +13,32 @@ import ch.qos.logback.core.util.StatusPrinter;
 import ch01.coupling.Phone;
 
 public class IoCContainerTest {
-	
-	private static final Logger logger = LoggerFactory.getLogger(IoCContainerTest.class);
-	
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(IoCContainerTest.class);
+
 	public static void main(String[] args) {
 
-		//beanFactory();
-	    applicationContext();
-		
+		// beanFactory();
+		applicationContext();
+
 	}
-	
+
 	public static void beanFactory() {
-		BeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-		//ApplicationContext context = new Class
+		BeanFactory factory = new XmlBeanFactory(new ClassPathResource(
+				"beans.xml"));
+		// ApplicationContext context = new Class
 		Phone phone = (Phone) factory.getBean("G3");
+		Phone phone2 = factory.getBean("G3", Phone.class);
 		phone.TurnOn();
 		phone.SendMessage();
 		phone.MakeCall();
 		phone.TurnOff();
 	}
-	
+
 	public static void applicationContext() {
-		ApplicationContext factory = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext factory = new ClassPathXmlApplicationContext(
+				"beans.xml");
 		Phone phone = (Phone) factory.getBean("S5");
 		phone.TurnOn();
 		phone.SendMessage();

@@ -8,7 +8,13 @@
 
 	<!-- <import resource="userBeans.xml" /> -->
 	<bean id="S5" class="ch01.coupling.S5Impl" >
-		<constructor-arg  value="white"/>
+		<constructor-arg  >
+		 	<list>
+		 		<value></value>
+		 		<value></value>
+		 		<value></value>
+		 	</list>
+		</constructor-arg>
 	</bean>
 	<bean id="G3" class="ch01.coupling.G3Impl" />
 </beans>

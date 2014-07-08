@@ -54,11 +54,11 @@ public class Test {
 	}
 	
 	public static void usePhone4() {
-		//Phone phone = new S5Impl();
-		//phone.TurnOn();
-		//phone.SendMessage();
-		//phone.MakeCall();
-		//phone.TurnOff();
+		Phone phone = new S5Impl();
+		phone.TurnOn();
+		phone.SendMessage();
+		phone.MakeCall();
+		phone.TurnOff();
 	}
 	
 	// 2. Factory 패턴을 이용한 결합도 떨어뜨리기  위한 메소드 5,6 번 
@@ -73,9 +73,10 @@ public class Test {
 		}
 		
 		public static void usePhone6() {
-			ApplicationContext factory = new ClassPathXmlApplicationContext("beans.xml");
+			//ApplicationContext factory = new ClassPathXmlApplicationContext("beans.xml");
+			MyBeanFactory factory = new MyBeanFactory();
 			S5Impl phone = (S5Impl) factory.getBean("S5");
-			System.out.println(phone.getColor());
+			//System.out.println(phone.getColor());
 			phone.TurnOn();
 			phone.SendMessage();
 			phone.MakeCall();

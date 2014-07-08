@@ -13,14 +13,17 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
          
          p:name="spring story"
          p:myMessage-ref="myMessage"
+         p:myTime-ref="myTime"
          
          init-method="custom_init"
          destroy-method="custom_end"
           />
+          
+  <bean id="myTime" class="ch01.ioc_container.MyTime" p:time="아침" />
          
   <bean id="myMessage"    
         class="ch01.ioc_container.MyMessage" 
         p:message="쉬워요"
-        depends-on="helloService" /> 
+         /> 
     
 </beans> 
