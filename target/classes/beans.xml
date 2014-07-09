@@ -7,14 +7,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- <import resource="userBeans.xml" /> -->
-	<bean id="S5" class="ch01.coupling.S5Impl" >
-		<constructor-arg  >
-		 	<list>
-		 		<value></value>
-		 		<value></value>
-		 		<value></value>
-		 	</list>
-		</constructor-arg>
-	</bean>
+	<bean id="S5" class="ch01.coupling.S5Impl" />
 	<bean id="G3" class="ch01.coupling.G3Impl" />
+	
+	<bean id="myBeanFactory" class="ch01.coupling.MyBeanFactory" />
+	
+	<!--  fatory-bean , factory-method 를 이용한 method 를 이용한 주입  -->
+	<!-- <bean id="method" factory-bean="myBeanFactory" factory-method="getBean" >
+		<constructor-arg value="G3"/>
+	</bean> -->
+	
+	
+
 </beans>
